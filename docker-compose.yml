@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  fadaka:
+    build: ./fadaka-blockchain
+    ports:
+      - "8545:8545"
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+
+  wallet-ui:
+    build: ./wallet-ui
+    ports:
+      - "3000:80"
+
+  certforge:
+    build: ./certforge
+    ports:
+      - "5050:5050"
