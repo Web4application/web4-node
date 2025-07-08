@@ -1,1 +1,6 @@
 docker-compose up --build
+
+git clone https://github.com/
+Web4application/web4-node.git
+cd web4-node
+docker-compose up --build
