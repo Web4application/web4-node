@@ -238,6 +238,29 @@
     }
 
     fetchStatus();
-  </script>
+   <button onclick="startListening()">🎙️ Talk</button>
+<div id="responseBox"></div>
+
+<script>
+const synth = window.speechSynthesis;
+const recognition = new webkitSpeechRecognition();
+
+function startListening() {
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    fetch('http://localhost:8000/assistant', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ command: transcript, user_id: 'kubu123' })
+    })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('responseBox').innerText = data.response;
+      synth.speak(new SpeechSynthesisUtterance(data.response));
+    });
+  };
+  recognition.start();
+}
+</script>
 </body>
 </html>
