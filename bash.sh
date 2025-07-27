@@ -11,3 +11,7 @@ pip install -r requirements.txt
 
 uvicorn app.main:app --reload
 http://127.0.0.1:8000/docs
+
+git add --all
+git commit -m "Initial commit"
+git push -u origin main
