@@ -26,20 +26,16 @@
       transition: all 0.3s ease;
     }
 
-    header {
+    header, footer {
       background: #111;
-      padding: 2rem;
       text-align: center;
+      padding: 1.5rem;
+      color: #ccc;
     }
 
     header h1 {
       font-size: 2.5rem;
       margin: 0;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
     }
 
     main {
@@ -48,21 +44,10 @@
       margin: auto;
     }
 
-    section {
-      margin-bottom: 2rem;
-    }
-
     h2 {
       border-left: 4px solid var(--accent-color);
       padding-left: 1rem;
       color: var(--accent-color);
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 1rem;
-      color: #666;
     }
 
     a {
@@ -74,105 +59,63 @@
       text-decoration: underline;
     }
 
-    .toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: var(--accent-color);
-      color: #000;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .github-buttons {
-      display: flex;
-      justify-content: center;
+    .iframe-wrapper {
+      width: 100%;
+      height: 600px;
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      overflow: hidden;
       margin-top: 1rem;
-    }
-
-    .github-buttons iframe {
-      margin: 0 5px;
-    }
-
-    .wallet-ui, .assistant-ui {
-      background: #222;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      color: #ddd;
     }
 
     .iframe-wrapper iframe {
       width: 100%;
-      height: 400px;
+      height: 100%;
       border: none;
-      border-radius: 8px;
     }
-  </style>
+
+    input, button {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      width: 100%;
+      max-width: 500px;
+      font-size: 1rem;
+    }
+
+    pre {
+      background: #333;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style><style>
+.cat-btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #111;
+  border: 1px solid #00ffaa;
+  color: #00ffaa;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.cat-btn:hover {
+  background-color: #00ffaa;
+  color: #000;
+}
+</style>
 </head>
+
 <body>
-
-  <button class="toggle-btn" onclick="toggleTheme()">🌗 Toggle Theme</button>
   <header>
-    <h1>🌐 Web4 Node</h1>
-    <p>The AI-native, user-owned, decentralized internet</p>
-    <div class="github-buttons">
-      <iframe src="https://ghbtns.com/github-btn.html?user=Web4application&repo=Web4Node&type=star&count=true" frameborder="0" scrolling="0" width="100" height="20" title="GitHub Star"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=Web4application&repo=Web4Node&type=fork&count=true" frameborder="0" scrolling="0" width="100" height="20" title="GitHub Fork"></iframe>
-    </div>
+    <h1>Web4: The Intelligent Internet</h1>
+    <p>Powered by Fadaka Blockchain, Swift Wallet & GPT Assistant</p>
+    <p id="status">🔄 Loading node status...</p>
   </header>
-  <main>
-    <section>
-      <h2>🚀 What is Web4?</h2>
-      <p>Web4 is a modular internet stack combining blockchain, AI, intelligent agents, and secure peer-to-peer systems. It's not just a protocol — it's a movement for autonomy, intelligence, and privacy.</p>
-    </section>
-<section>
-  <h2>🚀 Built on Web4</h2>
-  <p>The ecosystem that powers the intelligent, user-owned Web4 experience:</p>
-  <ul style="list-style: none; padding: 0;">
-    <li style="margin: 1rem 0;">
-      <strong>🪙 <a href="https://github.com/Web4application/fadakacoin" target="_blank">fadakacoin</a></strong><br/>
-      Native cryptocurrency shell for the Fadaka Blockchain—includes wallet integration (MetaMask/Trust Wallet), analytics (RODAAI), and the Lola virtual assistant  [oai_citation:0‡github.com](https://github.com/Web4application/Kubucoin?utm_source=chatgpt.com).
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🌐 <a href="https://github.com/Web4application/fadaka-blockchain" target="_blank">fadaka-blockchain</a></strong><br/>
-      Core Go-based chain: transaction routing, token logic, peer networking, and consensus.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>💸 <a href="https://github.com/Web4application/fadakatoken" target="_blank">fadakatoken</a></strong><br/>
-      ERC20-style smart contract implementation for FDAK tokens—supports minting, burning, and upgrades.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🧠 <a href="https://github.com/Web4application/project_pilot_ai" target="_blank">project_pilot_ai</a></strong><br/>
-      GPT-powered assistant designed to orchestrate blockchain workflows, automate code, and support developer queries.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🤖 <a href="https://github.com/Web4application/congen" target="_blank">congen</a></strong><br/>
-      Engine for chatbots assistant trained on structured data—streamlined for Streamlit deployments.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🧪 <a href="https://github.com/Web4application/UniversalCertForge" target="_blank">UniversalCertForge</a></strong><br/>
-      FastAPI-powered certificate tool for SSL, app, and binary signing—helps secure Web4 infrastructure.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>💬 <a href="https://github.com/Web4application/zetachat" target="_blank">zetachat</a></strong><br/>
-      Real-time AI-enabled chat and collaboration built with FastAPI and WebSockets.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🔌 <a href="https://github.com/Web4application/web4walletconnect" target="_blank">web4walletconnect</a></strong><br/>
-      JavaScript library designed to connect wallets across Web4 apps—mobile and desktop compatible.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🌐 <a href="https://github.com/Web4application/web4application.github.io" target="_blank">web4wallet (UI)</a></strong><br/>
-      The Swift Beta wallet interface—integrated token swaps, QR code handling, AI dashboard, and more, ready for GitHub Pages.
-    </li>
-  </ul>
-</section>
 
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+  <main>
     <section>
       <h2>🧠 What's Inside?</h2>
       <ul>
@@ -182,36 +125,39 @@
         <li>FX Swap Router + Faucet</li>
         <li>CertForge Identity & TLS</li>
       </ul>
-    </section><section>
-  <h2>🚀 Built on Web4</h2>
-  <p>These are the core components powering the Web4 experience:</p>
-  <ul style="list-style: none; padding: 0;">
-    <li style="margin: 1rem 0;">
-      <strong>🪙 <a href="https://github.com/Web4application/fadakacoin" target="_blank">fadakacoin</a></strong><br/>
-      Native cryptocurrency & blockchain logic for FDAK. Includes analytics, validator, faucet, and token swap support.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🧠 <a href="https://github.com/Web4application/rodaai" target="_blank">rodaai</a></strong><br/>
-      AI-powered data analytics and insight engine. Includes Lola Assistant integration and Smart TX predictions.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>💬 <a href="https://github.com/Web4application/zetachat" target="_blank">zetachat</a></strong><br/>
-      Decentralized chat and collab layer for Web4. Built with JavaScript + Python for real-time communication.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🔗 <a href="https://github.com/Web4application/web4walletconnect" target="_blank">web4walletconnect</a></strong><br/>
-      Wallet connection library for Web4 dApps. Enables seamless connection across mobile/desktop.
-    </li>
-    <li style="margin: 1rem 0;">
-      <strong>🌐 <a href="https://github.com/Web4application/web4application.github.io" target="_blank">web4wallet</a></strong><br/>
-      UI layer for interacting with Web4 wallets, swaps, QR, GPT, and more. Deployable via GitHub Pages.
-    </li>
-  </ul>
+    </section>
+    <!-- IoT Dev Classroom (AI-Powered) -->
+<section id="dev-classroom" style="padding: 2rem; background: #0a0a0a; color: #f0f0f0; font-family: sans-serif;">
+  <h2 style="text-align: center; font-size: 2rem;">📚 IoT Dev Classroom <span style="color:#00ffaa;">(Powered by AI)</span></h2>
+  <p style="text-align:center;">Select a category to explore auto-generated lessons 👇</p>
+
+  <div class="categories" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+    <button onclick="loadLessons('iot')" class="cat-btn">IoT</button>
+    <button onclick="loadLessons('blockchain')" class="cat-btn">Blockchain</button>
+    <button onclick="loadLessons('web')" class="cat-btn">Web Dev</button>
+    <button onclick="loadLessons('ai')" class="cat-btn">AI/ML</button>
+  </div>
+
+  <div id="lesson-list" style="margin-top: 2rem; padding: 1rem; background: #111; border-radius: 10px;">
+    <p style="text-align:center;">📘 Lessons will appear here...</p>
+  </div>
 </section>
+
+    <section>
+      <h2>🚀 Built on Web4</h2>
+      <p>Core components powering the Web4 experience:</p>
+      <ul>
+        <li><strong>🪙 <a href="https://github.com/Web4application/fadakacoin" target="_blank">fadakacoin</a></strong></li>
+        <li><strong>🧠 <a href="https://github.com/Web4application/rodaai" target="_blank">rodaai</a></strong></li>
+        <li><strong>💬 <a href="https://github.com/Web4application/zetachat" target="_blank">zetachat</a></strong></li>
+        <li><strong>🔗 <a href="https://github.com/Web4application/web4walletconnect" target="_blank">web4walletconnect</a></strong></li>
+        <li><strong>🌐 <a href="https://github.com/Web4application/web4application.github.io" target="_blank">web4wallet</a></strong></li>
+      </ul>
+    </section>
 
     <section class="wallet-ui">
       <h2>💼 Wallet & Faucet Access</h2>
-      <p>Use the Swift Beta Wallet to view your FDAK balance, request faucet tokens, and perform swaps.</p>
+      <p>Use the Swift Beta Wallet to manage your FDAK tokens and swaps:</p>
       <div class="iframe-wrapper">
         <iframe src="https://web4application.github.io/Bizz/" title="Swift Beta Wallet"></iframe>
       </div>
@@ -219,15 +165,67 @@
 
     <section class="assistant-ui">
       <h2>🤖 Web4 AI Assistant</h2>
-      <p>Ask the AI anything — from deployment help to smart contract interaction. It's your on-node GPT companion.</p>
+      <p>Ask anything, including contract help, node status, and more:</p>
       <div class="iframe-wrapper">
         <iframe src="https://congen-ai.streamlit.app" title="AI Assistant"></iframe>
       </div>
     </section>
 
     <section>
+      <h2>📝 Sign a Transaction</h2>
+      <input id="from" placeholder="From Address" />
+      <input id="to" placeholder="To Address" />
+      <input id="amount" placeholder="Amount" />
+      <input id="gas" placeholder="Gas" />
+      <input id="private_key" type="password" placeholder="Private Key" />
+      <button onclick="signTransaction()">🔐 Sign Transaction</button>
+      <pre id="signed_tx">No transaction yet</pre>
+    </section>
+<script>
+const lessons = {
+  iot: [
+    "🔌 What is IoT? Understanding Smart Devices",
+    "📡 Getting Started with MQTT Protocol",
+    "🌐 Connecting Arduino to Web4",
+    "📊 Sending Sensor Data to the Blockchain",
+    "🧠 AI + IoT: Predictive Maintenance"
+  ],
+  blockchain: [
+    "📘 Smart Contracts 101",
+    "🔗 Deploying Contracts on Fadaka Chain",
+    "💸 Creating Your Own Token (ERC-20)",
+    "🛠 Interacting with Contracts via Web3",
+    "📈 Tokenomics in Decentralized Systems"
+  ],
+  web: [
+    "🧱 HTML + CSS Fundamentals",
+    "⚛️ Modern JS + React Basics",
+    "🌐 Building a Web3 App with ethers.js",
+    "📲 Responsive Web4 Interfaces",
+    "🔐 Web Wallet Auth with Fadaka"
+  ],
+  ai: [
+    "🧠 Machine Learning Basics",
+    "🤖 Building a GPT Chatbot",
+    "📊 Training Models on CSVs",
+    "🛠 Deploy AI on Microcontrollers",
+    "🎓 Building an AI Tutor for IoT"
+  ]
+};
+
+function loadLessons(topic) {
+  const list = lessons[topic] || [];
+  document.getElementById("lesson-list").innerHTML = `
+    <h3 style="margin-bottom: 1rem; color: #00ffaa;">${topic.toUpperCase()} Lessons:</h3>
+    <ul style="list-style-type: none; padding-left: 0;">
+      ${list.map(item => `<li style="padding: 0.5rem 0; border-bottom: 1px solid #333;">${item}</li>`).join("")}
+    </ul>
+  `;
+}
+</script>
+    <section>
       <h2>📘 Documentation</h2>
-      <p>Visit the <a href="./../docs/index.md">Docs folder</a> or use MkDocs to build and view it live.</p>
+      <p>Visit the <a href="../docs/index.md">Docs folder</a> or use MkDocs to build and host it live.</p>
     </section>
 
     <section>
@@ -236,59 +234,52 @@
         <li><a href="https://github.com/Web4application/fadaka-blockchain">Fadaka Blockchain</a></li>
         <li><a href="https://github.com/Web4application/project_pilot_ai">ProjectPilot AI</a></li>
         <li><a href="https://github.com/Web4application/congen">Congen-AI Trainer</a></li>
-        <li><a href="https://github.com/Web4application/Bizz">Bizz Automation (AI Wallet + DEX)</a></li>
-        <li><a class="github-button" href="https://github.com/Web4application/fadakacoin" data-icon="octicon-star" data-show-count="true" aria-label="Star Web4application/fadakacoin on GitHub">Star</a>
+        <li><a href="https://github.com/Web4application/Bizz">Bizz Automation</a></li>
       </ul>
     </section>
   </main>
+
   <footer>
     Built by <a href="https://github.com/Web4application" target="_blank">Web4Application</a> © 2025
   </footer>
 
   <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      html.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+    const backendURL = window.location.hostname.includes("localhost")
+      ? "http://localhost:8000"
+      : "https://your-backend-url.onrender.com"; // UPDATE THIS after backend deployment
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch(backendURL + "/status");
+        const data = await res.json();
+        document.getElementById("status").innerText =
+          `🟢 Height: ${data.block_height}, Peers: ${data.peers}, Faucet: ${data.faucet_supply}`;
+      } catch (e) {
+        document.getElementById("status").innerText = "🔴 Cannot connect to backend.";
+      }
     }
 
-    document.documentElement.setAttribute('data-theme', 'dark');
+    async function signTransaction() {
+      const tx = {
+        from_: document.getElementById("from").value,
+        to: document.getElementById("to").value,
+        amount: document.getElementById("amount").value,
+        gas: document.getElementById("gas").value,
+        private_key: document.getElementById("private_key").value,
+      };
+
+      const res = await fetch(backendURL + "/sign", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(tx),
+      });
+
+      const result = await res.json();
+      document.getElementById("signed_tx").innerText = result.signed_tx;
+    }
+
+    window.onload = fetchStatus;
   </script>
-    <script>
-  const backendURL = "http://localhost:8000"; // Change to your deployed URL later
 
-  async function fetchStatus() {
-    try {
-      const res = await fetch(backendURL + "/status");
-      const data = await res.json();
-      document.getElementById("status").innerText =
-        `🟢 Height: ${data.block_height}, Peers: ${data.peers}, Faucet: ${data.faucet_supply}`;
-    } catch (e) {
-      document.getElementById("status").innerText = "🔴 Cannot connect to backend.";
-    }
-  }
-
-  async function signTransaction() {
-    const tx = {
-      from_: document.getElementById("from").value,
-      to: document.getElementById("to").value,
-      amount: document.getElementById("amount").value,
-      gas: document.getElementById("gas").value,
-      private_key: document.getElementById("private_key").value,
-    };
-
-    const res = await fetch(backendURL + "/sign", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(tx),
-    });
-
-    const result = await res.json();
-    document.getElementById("signed_tx").innerText = result.signed_tx;
-  }
-
-  window.onload = fetchStatus;
-</script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
