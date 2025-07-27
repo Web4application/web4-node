@@ -130,7 +130,22 @@
 <section id="dev-classroom" style="padding: 2rem; background: #0a0a0a; color: #f0f0f0; font-family: sans-serif;">
   <h2 style="text-align: center; font-size: 2rem;">📚 IoT Dev Classroom <span style="color:#00ffaa;">(Powered by AI)</span></h2>
   <p style="text-align:center;">Select a category to explore auto-generated lessons 👇</p>
+<section id="geo-chat" style="padding: 2rem; background: #121212; color: #fff; margin-top: 3rem;">
+  <h2 style="text-align:center;">🌍 Web4 Global Dev Chat</h2>
+  <p style="text-align:center;">Connect with fellow builders worldwide</p>
 
+  <div style="max-width: 600px; margin: auto; padding: 1rem; background: #1a1a1a; border-radius: 8px;">
+    <input id="chat-name" type="text" placeholder="Your Name" style="width: 48%; padding: 0.5rem; margin: 0.5rem 1%;"/>
+    <input id="chat-location" type="text" placeholder="Your Region/Country" style="width: 48%; padding: 0.5rem; margin: 0.5rem 1%;"/>
+    <textarea id="chat-msg" placeholder="Message..." rows="3" style="width: 96%; padding: 0.7rem; margin: 0.5rem 2%;"></textarea>
+    <button onclick="sendChat()" style="width: 100%; padding: 0.7rem; background: #00ffaa; color: #000; border: none; font-weight: bold; cursor: pointer;">
+      Send Message
+    </button>
+    <div id="chat-box" style="margin-top: 1rem; max-height: 250px; overflow-y: auto; background: #000; padding: 1rem; border-radius: 5px;">
+      <p><em>💬 Messages will appear here...</em></p>
+    </div>
+  </div>
+</section>
   <div class="categories" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
     <button onclick="loadLessons('iot')" class="cat-btn">IoT</button>
     <button onclick="loadLessons('blockchain')" class="cat-btn">Blockchain</button>
@@ -221,6 +236,33 @@ function loadLessons(topic) {
       ${list.map(item => `<li style="padding: 0.5rem 0; border-bottom: 1px solid #333;">${item}</li>`).join("")}
     </ul>
   `;
+}
+</script>
+    <script>
+let chatMessages = [];
+
+function sendChat() {
+  const name = document.getElementById('chat-name').value || 'Anonymous';
+  const location = document.getElementById('chat-location').value || '🌍 Earth';
+  const message = document.getElementById('chat-msg').value;
+
+  if (!message.trim()) return;
+
+  const time = new Date().toLocaleTimeString();
+  chatMessages.push({ name, location, message, time });
+
+  updateChatBox();
+  document.getElementById('chat-msg').value = '';
+}
+
+function updateChatBox() {
+  const box = document.getElementById('chat-box');
+  box.innerHTML = chatMessages.map(msg =>
+    `<div style="margin-bottom: 1rem;">
+      <strong style="color: #00ffaa;">${msg.name}</strong> from <span style="color: #ccc;">${msg.location}</span> at <small>${msg.time}</small><br/>
+      <span style="color:#eee;">${msg.message}</span>
+    </div>`
+  ).join('');
 }
 </script>
     <section>
