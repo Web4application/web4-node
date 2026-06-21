@@ -19,7 +19,7 @@ Fadaka-blockchain serves as a performance-efficient blockchain base for the Web4
 | Attribute           | Value                                           |
 |---------------------|--------------------------------------------------|
 | 🕒 Created On        | 2025-06-20                                       |
-| ⏱️ Last Updated     | 2025-07-08                                       |
+| ⏱️ Last Updated     | 2026-6-08                                       |
 | 🔀 Forks             | 0                                                |
 | ⭐ Stargazers        | 1                                                |
 | 👀 Watchers          | 1                                                |
@@ -36,7 +36,8 @@ Fadaka-blockchain serves as a performance-efficient blockchain base for the Web4
 - Repo is structured to support modular blockchain extensions.
 - Ideal for contributions and forks due to its template setup.
 - Easily clone with:
-  ```bash
-  git clone https://github.com/Web4application/Fadaka-blockchain.git
+- 
+```bash
+git clone https://github.com/Web4application/Fadaka-blockchain.git
   cd Fadaka-blockchain
-
+```
